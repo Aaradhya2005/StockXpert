@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inventory.controller.AdminController"
+      style="-fx-background-color: linear-gradient(to bottom right, #1a2a6c, #b21f1f, #fdbb2d);">
+    <padding>
+        <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+    </padding>
+
+    <Text text="Admin Panel" 
+          style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-fill: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 15, 0, 0, 3);" />
+
+    <TabPane VBox.vgrow="ALWAYS" style="-fx-background-color: rgba(255, 255, 255, 0.15); -fx-background-radius: 20;">
+        <!-- Users Tab -->
+        <Tab text="Users" closable="false">
+            <VBox spacing="10" style="-fx-padding: 20;">
+                <TableView fx:id="userTable" VBox.vgrow="ALWAYS"
+                          style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 15;">
+                    <columns>
+                        <TableColumn fx:id="userIdColumn" text="ID" prefWidth="50" />
+                        <TableColumn fx:id="usernameColumn" text="Username" prefWidth="200" />
+                        <TableColumn fx:id="createdAtColumn" text="Created At" prefWidth="200" />
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Delete Selected User" onAction="#handleDeleteUser"
+                            style="-fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 25; -fx-background-radius: 25;" />
+                </HBox>
+            </VBox>
+        </Tab>
+
+        <!-- Products Tab -->
+        <Tab text="Products" closable="false">
+            <VBox spacing="10" style="-fx-padding: 20;">
+                <TableView fx:id="productTable" VBox.vgrow="ALWAYS"
+                          style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 15;">
+                    <columns>
+                        <TableColumn fx:id="productIdColumn" text="ID" prefWidth="100" />
+                        <TableColumn fx:id="productNameColumn" text="Name" prefWidth="200" />
+                        <TableColumn fx:id="productPriceColumn" text="Price" prefWidth="100" />
+                        <TableColumn fx:id="productQuantityColumn" text="Quantity" prefWidth="100" />
+                        <TableColumn fx:id="productUserIdColumn" text="User ID" prefWidth="100" />
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Delete Selected Product" onAction="#handleDeleteProduct"
+                            style="-fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 25; -fx-background-radius: 25;" />
+                    <Button text="Delete All Products" onAction="#handleDeleteAllProducts"
+                            style="-fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 25; -fx-background-radius: 25;" />
+                </HBox>
+            </VBox>
+        </Tab>
+    </TabPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Logout" onAction="#handleLogout"
+                style="-fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 25; -fx-background-radius: 25; -fx-min-width: 120;" />
+    </HBox>
+
+    <Label fx:id="messageLabel" 
+           style="-fx-text-fill: #e74c3c; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10; -fx-background-color: rgba(231, 76, 60, 0.1); -fx-background-radius: 10;" />
+</VBox> 
