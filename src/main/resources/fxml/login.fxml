@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inventory.controller.LoginController"
+      style="-fx-background-color: linear-gradient(to bottom right, #1a2a6c, #b21f1f, #fdbb2d);">
+    <padding>
+        <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+    </padding>
+
+    <Text text="Inventory Management System" 
+          style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-fill: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 15, 0, 0, 3);" />
+
+    <GridPane hgap="10" vgap="10" alignment="CENTER"
+              style="-fx-background-color: rgba(255, 255, 255, 0.15); -fx-background-radius: 20; -fx-padding: 25;">
+        <Label text="Username:" 
+               style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"
+               GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="usernameField" 
+                  style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 25; -fx-padding: 12; -fx-font-size: 14px; -fx-min-width: 250;"
+                  GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Password:" 
+               style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"
+               GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <PasswordField fx:id="passwordField" 
+                      style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 25; -fx-padding: 12; -fx-font-size: 14px; -fx-min-width: 250;"
+                      GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Login" onAction="#handleLogin"
+                style="-fx-background-color: linear-gradient(to bottom, #4a90e2, #357abd); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 25; -fx-background-radius: 25; -fx-min-width: 120;" />
+        <Button text="Sign Up" onAction="#handleSignup"
+                style="-fx-background-color: linear-gradient(to bottom, #27ae60, #229954); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 25; -fx-background-radius: 25; -fx-min-width: 120;" />
+        <Button text="Admin Login" onAction="#handleAdminLogin"
+                style="-fx-background-color: linear-gradient(to bottom, #9b59b6, #8e44ad); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 25; -fx-background-radius: 25; -fx-min-width: 120;" />
+        <Button text="Exit" onAction="#handleExit"
+                style="-fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 25; -fx-background-radius: 25; -fx-min-width: 120;" />
+    </HBox>
+
+    <Label fx:id="messageLabel" 
+           style="-fx-text-fill: #e74c3c; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10; -fx-background-color: rgba(231, 76, 60, 0.1); -fx-background-radius: 10;" />
+</VBox> 
